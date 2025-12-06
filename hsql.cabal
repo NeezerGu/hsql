@@ -1,0 +1,24 @@
+cabal-version:       >=1.10
+name:                hsql
+version:             0.1.0.0
+build-type:          Simple
+
+library
+  exposed-modules:     HSQL.Database,
+                       HSQL.SQL
+  hs-source-dirs:      src
+  build-depends:       base >=4.14 && <5,
+                       containers,
+                       parsec,
+                       text
+  default-language:    Haskell2010
+
+executable hsql
+  main-is:             Main.hs
+  hs-source-dirs:      app, src
+  build-depends:       base >=4.14 && <5,
+                       containers,
+                       parsec,
+                       text,
+                       hsql
+  default-language:    Haskell2010
